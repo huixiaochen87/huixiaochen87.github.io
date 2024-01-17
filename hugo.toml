@@ -1,0 +1,11 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = '騙子狗'
+theme = 'stack'
+
+
+[params]
+    [params.sidebar.avatar]
+        enabled = true
+        local = true
+        src = "img/avatar.png"
