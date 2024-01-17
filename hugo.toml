@@ -1,5 +1,5 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
+baseURL = 'https://huixiaochen87.github.io/'
+languageCode = 'zh-tw'
 title = '騙子狗'
 theme = 'stack'
 
